@@ -1,0 +1,222 @@
+Inicio
+  class SistemaDeHospital {
+    //Todas la listas que se necesitan para el menu de doctores, pacientes, administradores y citas
+    ArrayList<Long> doctorId;
+    ArrayList<String> doctorNombre;
+    ArrayList<String> doctorEspecialidad;
+
+
+    ArrayList<Long> pacienteId;
+    ArrayList<String> pacienteNombre;
+
+    //Usuario de administracion ya creado ya que no solo se puede crear uno
+    String administradorId = "Admin123";
+    String administradorPassword = "Password123";
+
+    ArrayList<Long> citaId;
+    ArrayList<String> citaDoctor;
+    ArrayList<String> citaPaciente;
+    ArrayList<String> citaFecha;
+    ArrayList<String> citaHora;
+    ArrayList<String> citaMotivo;
+
+
+
+    //Menu de doctores
+    void doctor() {
+        Scanner scnr = new Scanner(System.in);
+        while (true) {
+            Escribir ("¿Que desea hacer?");
+            Escribir ("0. Ver Doctores  1. Registrarse 2. Salir");
+            int seleccion = leer lo ultimo escrito;
+
+            switch (seleccion) {
+                opcion 0:
+                    if (no hay doctorId) {
+                        Escribir ("No hay doctores registrados");
+                        break;
+                    } else {
+                        for (int x = 0; x < doctorId; x++) {
+                            Escribir (" Nombre: " + doctorNombre + " ID: " + doctorId + " Especialidad: " + doctorEspecialidad);
+                        }
+                        break;
+                    }
+                opcion 1:
+                    Escribir ("Ingrese su nombre (EN VEZ DE ESPACIOS USE -)");
+                    String nombre = leer lo ultimo escrito;
+                    añadir doctorNombre(nombre);
+                    Escribir ("Ingrese su especialidad");
+                    String especialidad = leer lo ultimo escrito;
+                    añadir doctorEspecialidad (especialidad);
+                    Escribir ("Este es su ID de doctor");
+                    long id = se genera ID;
+                    añadir doctorId(id);
+                    Escribir (id);
+                    break;
+                opcion 2:
+                    Regresa al menu principal;
+
+                default:
+                    Regresa al menus de doctores;
+
+            }
+        }
+    }
+
+    //Menu de pacientes
+    void paciente() {
+        Scanner scnr = new Scanner(System.in);
+        while (true) {
+            Escribir ("¿Que desea hacer?");
+            Escribir ("0. Ver Pacientes  1. Registrarse 2. Salir");
+            int seleccion = leer lo ultimo escrito;
+
+            switch (seleccion) {
+                opcion 0:
+                    if (no hay pacienteID) {
+                        Escribir ("No hay pacientes registrados");
+                        break;
+                    } else {
+                        for (int x = 0; x < pacienteId; x++) {
+                            Escribir (" Nombre: " + pacienteNombre + " ID: " + pacienteId);
+                        }
+                        break;
+                    }
+                opcion 1:
+                    Escribir ("Ingrese su nombre (EN VEZ DE ESPACIOS USE -)");
+                    String nombre = leer lo ultimo escrito;
+                    añadir pacienteNombre(nombre);
+                    Escribir ("Este es su ID de paciente");
+                    long id = se genera ID;
+                    añadir pacienteId (id);
+                    Escribir (id);
+                opcion 2:
+                    regresa al menu principal;
+                    break;
+
+                default:
+                    Regresa al menu de pacientes;
+
+            }
+        }
+    }
+
+    //Menu de administradores
+    void administrador() {
+        Scanner scnr = new Scanner(System.in);
+        while (true) {
+             Escribir ("¿Que desea hacer?");
+             Escribir ("0. Iniciar sesion 1. Salir");
+            int seleccion = leer lo ultimo escrito;
+
+            switch (seleccion) {
+                opcion 0:
+                     Escribir ("Ingrese su ID");
+                    String id = leer lo ultimo escrito;
+                     Escribir ("Ingrese su contraseña");
+                    String password = leer lo ultimo escrito;
+                    if (la ID y la contraseña leeidas son igual que las creadas)){
+                         Escribir ("Bienvenido administrador");
+                         Escribir ("¿Que desea hacer?");
+                         Escribir ("0. Ver doctores  1. Ver pacientes  2. Ver citas 3. Crear citas 4. Salir");
+                        int seleccion = leer lo ultimo escrito;
+                        switch (seleccion) {
+                            case 0:
+                                if (no hay doctorId) {
+                                     Escribir ("No hay doctores registrados");
+                                    break;
+                                } else {
+                                    for (int x = 0; x < doctorId.size(); x++) {
+                                         Escribir ("ID: " + doctorId + " Nombre: " + doctorNombre + " Especialidad: " + doctorEspecialidad);
+                                    }
+                                    break;
+                                }
+                            case 1:
+                                if (no hay pacienteId) {
+                                     Escribir ("No hay pacientes registrados");
+                                    break;
+                                } else {
+                                    for (int x = 0; x < pacienteId; x++) {
+                                         Escribir ("ID: " + pacienteId + " Nombre: " + pacienteNombre);
+                                    }
+                                    break;
+                                }
+                            case 2:
+                                if (no hay citaId) {
+                                     Escribir ("No hay citas registradas");
+                                    break;
+                                } else {
+                                    for (int x = 0; x < citaId; x++) {
+                                         Escribir ("ID: " + citaId + " Doctor: " + citaDoctor + " Paciente: " + citaPaciente + " Fecha: " + citaFecha + " Hora: " + citaHora + " Motivo: " + citaMotivo);
+                                    }
+                                    break;
+                                }
+                            opcion 3:
+                                Escribir ("Ingrese el nombre del paciente (EN VEZ DE ESPACIOS USE -)");
+                                String nombre1 = leer lo ultimo escrito;
+                                 añadir citaPaciente(nombre1);
+                                Escribir ("Ingrese el nombre del doctor (EN VEZ DE ESPACIOS USE -)");
+                                String nombre2 =leer lo ultimo escrito;
+                                añadir citaDoctor (nombre2);
+                                 Escribir ("Ingrese la fecha de la cita Formato XX/XX/XXXX");
+                                String fecha = leer lo ultimo escrito;
+                                añadir citaFecha(fecha);
+                                 Escribir ("Ingrese la hora de la cita  Formato XX:XXAM/PM");
+                                String hora = leer lo ultimo escrito;
+                                añadir citaHora(hora);
+                                Escribir ("Ingrese el motivo de la cita (EN VEZ DE ESPACIOS USE -)");
+                                String motivo = leer lo ultimo escrito;
+                                añadir citaMotivo(motivo);
+                                Escribir ("Este es su ID de cita");
+                                long id1 = se crea ID
+                                 añadir citaId.add(id1);
+                                System.out.println(id1);
+                                break;
+
+                            opcion 4:
+                                flag=false;
+                                break;
+                            default:
+                                Regresa al menu de inicio de sesion administrativa;
+                        }
+                    } else {
+                        Escribe ("ID o contraseña incorrectos");
+
+                    }
+                    
+                opcion 1:
+                    Regresa al menu principal;
+        
+
+                default:
+                    Regresa al menu de inicio de sesion administrativa;
+
+            }
+        }
+    }
+
+}
+
+//Menu Principal
+class Inicio {
+    public static void main (String[] args) throws Exception {
+        SistemaDeHospital ap = new SistemaDeHospital();
+        Scanner scnr = new Scanner(System.in);
+        while (true) {
+            Escribe ("¿Que tipo de usuario eres?");
+            Escribe ("0. Doctor  1. Paciente  2. Administrador");
+            leer seleccion
+
+            switch (seleccion){
+                opcion 0 : {ap.doctor(); break;}
+                opcion 1 : {ap.paciente(); break;}
+                opcion 2 : {ap.administrador(); break;}
+
+                default : vuelve a dar las 3 opciones;
+
+            }
+        }
+    }
+}
+
+Fin
